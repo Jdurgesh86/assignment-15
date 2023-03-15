@@ -1,0 +1,31 @@
+//Write a function in C to read n number of values in an array and display it in reverse order.
+#include<stdio.h>
+void disreverse(int ,int[]);
+int main()
+{
+    int n;
+    printf("Enter the size of the array ");
+    scanf("%d",&n);
+    printf("Enter the array elements ");
+    int arr[n];
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+    disreverse(n,arr);
+}
+
+void disreverse(int n,int arr[])
+{
+    for(int i=0;i<n/2;i++)
+    {
+        int temp;
+        temp=arr[i];
+        arr[i]=arr[n-1-i];
+        arr[n-1-i]=temp;
+    }
+    for(int i=0;i<n;i++)
+    {
+        printf("%d ",arr[i]);
+    }
+}
